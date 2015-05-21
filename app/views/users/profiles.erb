@@ -1,1 +1,12 @@
+<h3>Welcome <%=@profile.first_name%> <%=@profile.last_name%>, please knees down in front of your god, Kei!</h3>
 
+<ul>
+<li><%=@profile.username%></li>
+<li><%=@profile.first_name%></li>
+<li><%=@profile.last_name%></li>
+<li><%=@profile.email%></li>
+<li><%=@profile.phone_number%></li>
+<% end %>
+</ul>
+
+<a href="/users/#{@profile.username}">Back to your Keit!</a>
