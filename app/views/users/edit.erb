@@ -1,1 +1,11 @@
+<h3>Edit your profil</h3>
 
+<form action="/users/profile" method="post">
+  <div><input type="text" name="username" placeholder="Username"></div>
+  <div><input type="text" name="first_name" placeholder="First name"></div>
+  <div><input type="text" name="last_name" placeholder="Last name"></div>
+  <div><input type="text" name="email" placeholder="Email"></div>
+  <div><input type="text" name="phone_number" placeholder="Phone"></div>
+  <div><input type="hidden" name="_method" value="put"></div>
+  <div><input type="submit"></div>
+</form>
