@@ -18,13 +18,22 @@
   <title></title>
 </head>
 <body>
+
   <header>
+    <a href="/userlist"><button type="button">userlist</button></a>
     <%if current_user%>
-     <a href="/signout"><button type="button">logoff</button></a>
+     <a href="/signout"><button type="button">Banzai!!</button></a>
    <%end%>
   </header>
 
-
+  <main>
+  <div class="left">
+  <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c134.0.533.533/295160_10150780302345815_1642421001_n.jpg?oh=ca715af5985d3ee498f035eabbcc9da0&oe=55CD2A18&__gda__=1442908498_ce0a2f098b86eac03af10b2aeea82846" alt="OUR GOD" title="BOW DOWN PLEBIAN"/ width="110%">
+  <p>BOW DOWN TO THE GOD, KEI, MOTHERFUCKERS!!!</p>
+ </div>
+ <div class="right">
   <%= yield %>
+ </div>
+  </main>
 </body>
 </html>

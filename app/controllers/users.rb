@@ -5,8 +5,8 @@ end
 
 
 get '/users/:username' do
-  @user = User.find_by(username: params[:username])
-  @keit = Keit.where(user_id: @user.id)
+  @user1 = User.find_by(username: params[:username])
+  @keit = Keit.where(user_id: @user1.id)
   erb :'/users/index'
 end
 
@@ -29,9 +29,10 @@ end
 
 get '/userlist' do
   @users = User.all
-
   erb :'/user_list'
 end
 
-
-
+get '/users/profile/relationships' do
+  @user = current_user
+  erb :'/users/relationships'
+end
