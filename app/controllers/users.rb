@@ -22,6 +22,6 @@ end
 
 put '/users/profile' do
 @editprofile = User.find_by(user_id: session[:user_id])
-@editprofile.update_attributes(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+@editprofile.update_attributes(username: params[:username], password_hash: params[:password_hash], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
 redirect '/users/profile'
 end
