@@ -17,6 +17,7 @@ end
 
 
 get '/users/profile/edit' do
+  @user = current_user
   erb :'/users/edit'
 end
 
