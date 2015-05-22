@@ -1,9 +1,15 @@
+
+ <h1>All users </h1>
+<table style="width:100%">
+
 <% @users.each do |user| %>
-<%= user.username %>
-
-
-<button type='submit' value='Submit'>Follow</button>
+<tr>
+    <td><a href="users/<%= user.username %>"><%= user.username %></a></td>
+    <td>
+<button type='submit' value='Submit'>Follow</button></td>
+ </tr>
 
 <% end %>
+</table>
 
 
