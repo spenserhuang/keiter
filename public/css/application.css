@@ -1,6 +1,20 @@
 /*CSS goes here*/
 .header {
   text-align: center;
+
+}
+
+header {
+  width:100%;
+  min-width: 960px;
+  height: 50px;
+  background-color:red;
+  vertical-align: middle;
+}
+
+header button {
+  margin: 15px;
+  float:right;
 }
 
 body {

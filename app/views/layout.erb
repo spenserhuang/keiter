@@ -18,9 +18,12 @@
   <title></title>
 </head>
 <body>
-  <%if current_user%>
-    <a href="/signout"><button type="button">logoff</button></a>
-  <%end%>
+  <header>
+    <%if current_user%>
+     <a href="/signout"><button type="button">logoff</button></a>
+   <%end%>
+  </header>
+
 
   <%= yield %>
 </body>
