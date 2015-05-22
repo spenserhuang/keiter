@@ -30,6 +30,11 @@ put '/users/profile' do
   redirect '/users/profile'
 end
 
+get '/userlist' do
+  @users = User.all
+  erb :'/user_list'
+end
+
 get '/users/profile/relationships' do
   @user = current_user
   erb :'/users/relationships'
