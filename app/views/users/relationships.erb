@@ -1,6 +1,6 @@
 <h3>Fuckers who follow you</h3>
 <ul>
-  <% @user.followers.each do |follower| %>
+  <% current_user.followers.each do |follower| %>
     <li><a href="/users/<%=follower.username%>"><%=follower.username%></a></li>
   <% end %>
 </ul>
@@ -9,7 +9,7 @@
 
 <h3>Assholes you follow</h3>
 <ul>
-  <% @user.followings.each do |following| %>
+  <% current_user.followings.each do |following| %>
     <li><a href="/users/<%=following.username%>"><%=following.username%></a></li>
   <% end %>
 </ul>

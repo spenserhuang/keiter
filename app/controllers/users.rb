@@ -10,6 +10,11 @@ get '/users/:username' do
   erb :'/users/index'
 end
 
+post '/users/:username' do
+  current_user.followings << User.find_by(username: params[:username])
+  redirect "/users/#{current_user.username}"
+end
+
 post '/keits' do
   Keit.create(text: params[:text], user_id: session[:user_id])
   redirect "/users/#{current_user.username}"
@@ -27,12 +32,13 @@ put '/users/profile' do
   redirect '/users/profile'
 end
 
+
+
 get '/userlist' do
   @users = User.all
   erb :'/user_list'
 end
 
 get '/users/profile/relationships' do
-  @user = current_user
   erb :'/users/relationships'
 end
