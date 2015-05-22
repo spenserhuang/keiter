@@ -1,0 +1,22 @@
+/*CSS goes here*/
+.header {
+  text-align: center;
+}
+
+body {
+  background-color: #00CED1;
+  width: 100%;
+}
+
+#button {
+  text-align: center;
+}
+
+#submit-button {
+  margin-top: 1em;
+}
+
+#box {
+  width:50%;
+  margin: 0 auto;
+}
