@@ -1,11 +1,5 @@
-<h3>Welcome <%=@user1.first_name%> <%=@user1.last_name%></h3>
-
-<form action="/keits" method="post">
-  <div><input type="text" name="text" placeholder="write your Keit"></div>
-  <div><input type="submit"></div>
-</form>
-
-<div><a href="/users/profile">Wanna check/update your Keit profil</a></div>
+<h3><%=@user.username%> World</h3>
+<h4><%=@user.first_name%> <%=@user.last_name%></h4>
 
 <ul>
   <% if @keit != nil %>
@@ -16,5 +10,24 @@
     <p> Post a keit you fucker </p>
   <% end %>
 </ul>
+
+<% if session[:user_id] != nil && session[:user_id] == @user.id %>
+
+  <form action="/keits" method="post">
+    <div><input type="text" name="text" placeholder="write your Keit"></div>
+    <div><input type="submit"></div>
+  </form>
+
+  <div><a href="/users/profile">Wanna check/update your Keit profil</a></div>
+
+<% end %>
+
+<% if session[:user_id] != nil && session[:user_id] != @user.id %>
+
+  <form action="/users/<%=@user.username%>" method="post">
+    <div><input type="submit" value="Keit Me"></div>
+  </form>
+
+<% end %>
 
 <button><a href="/users/profile/relationships">See your relationships</a></button>
