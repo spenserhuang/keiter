@@ -33,8 +33,8 @@ put '/users/profile' do
 end
 
 
-
 get '/userlist' do
+  @user = current_user
   @users = User.all
   erb :'/user_list'
 end
