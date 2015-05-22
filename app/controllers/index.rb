@@ -24,10 +24,8 @@ post '/sign_up' do
 
   if @user.save
     session[:user_id] = @user.id
-    status 200
-    redirect '/'
+    redirect "/users/#{current_user.username}"
   else
-    status 404
     redirect '/sign_up'
   end
 end

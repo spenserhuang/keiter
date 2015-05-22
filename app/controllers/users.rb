@@ -6,8 +6,16 @@ end
 
 get '/users/:username' do
   @user = User.find_by(username: params[:username])
+  "*" * 15
+  p @user
+  "*" * 15
   @keit = Keit.where(user_id: @user.id)
   erb :'/users/index'
+end
+
+post '/users/:username' do
+  current_user.followings << User.find_by(username: params[:username])
+  redirect "/users/#{current_user.username}"
 end
 
 post '/keits' do
@@ -27,7 +35,13 @@ put '/users/profile' do
   redirect '/users/profile'
 end
 
-post '/users/:username' do
-  current_user.followings << User.find_by(username: params[:username])
-  redirect "/users/#{current_user.username}"
+
+
+get '/userlist' do
+  @users = User.all
+  erb :'/user_list'
+end
+
+get '/users/profile/relationships' do
+  erb :'/users/relationships'
 end
