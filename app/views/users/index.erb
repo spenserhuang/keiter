@@ -1,4 +1,4 @@
-<h3>Welcome <%=@user.first_name%> <%=@user.last_name%></h3>
+<h3>Welcome <%=@user1.first_name%> <%=@user1.last_name%></h3>
 
 <form action="/keits" method="post">
   <div><input type="text" name="text" placeholder="write your Keit"></div>
@@ -17,3 +17,4 @@
   <% end %>
 </ul>
 
+<button><a href="/users/profile/relationships">See your relationships</a></button>
