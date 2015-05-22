@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'bcrypt'
 
 class User < ActiveRecord::Base
@@ -14,22 +13,18 @@ class User < ActiveRecord::Base
     @password ||= Password.new(password_hash)
   end
 
-  # setter
+  #setter
   def password=(new_password)
     @password = Password.create(new_password)
     self.password_hash = @password
   end
-=======
-class User < ActiveRecord::Base
-
-  has_secure_password
 
   has_many :keits
 
   has_many :references_to_followings, class_name: "Relationship", foreign_key: "follower_id"
   has_many :followings, through: :references_to_followings
+
   has_many :references_to_followers, class_name: "Relationship", foreign_key: "following_id"
   has_many :followers, through: :references_to_followers
->>>>>>> origin/master
 
 end

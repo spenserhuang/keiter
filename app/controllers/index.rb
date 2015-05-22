@@ -5,32 +5,27 @@ end
 
 # this renders the sign up form
 get '/sign_up/new' do
-
   erb :sign_up
 end
 
 # this recieves the user's sign up info
 # and saves it to the database
 post '/sign_up' do
-  first_name = params[:first_name]
-  last_name = params[:last_name]
-  phone_number = params[:phone_number]
-  email = params[:email]
-  username = params[:username]
-  password = params[:password]
 
   @user = User.new(
-      first_name: first_name,
-      last_name: last_name,
-      phone_number: phone_number,
-      email: email,
-      username: username,
-      password: password,
-    )
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    phone_number: params[:phone_number],
+    email: params[:email],
+    username: params[:username],
+    password_hash: params[:password]
+  )
+
 
   if @user.save
+    session[:user_id] = @user.id
     status 200
-    redirect '/test'
+    redirect '/'
   else
     status 404
     redirect '/sign_up'
@@ -44,15 +39,17 @@ end
 # this grabs the sign in info from the user and determines
 # if the user password is correct
 post '/sign_in' do
-  password = params[:password]
-  @user = User.where(email: params[:email]).first
-
-  if @user && @user.password == password
-    # log_in(@user)
-    status 200
-    redirect '/test'
+  password_hash = params[:password]
+  user = User.find_by(username: params[:username])
+  if user && user.password_hash == password_hash
+    session[:user_id] = user.id
+    redirect "/users/#{current_user.username}"
   else
-    status 404
-    redirect '/sign_in'
+    redirect '/'
   end
+end
+
+get '/signout' do
+  session[:user_id] = nil
+  redirect '/'
 end
