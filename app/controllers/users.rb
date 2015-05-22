@@ -5,6 +5,7 @@ end
 
 
 get '/users/:username' do
+  p "p"*70
   @user1 = User.find_by(username: params[:username])
   @keit = Keit.where(user_id: @user1.id)
   erb :'/users/index'
