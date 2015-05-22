@@ -21,7 +21,6 @@ post '/sign_up' do
     password_hash: params[:password]
   )
 
-
   if @user.save
     session[:user_id] = @user.id
     redirect "/users/#{current_user.username}"
