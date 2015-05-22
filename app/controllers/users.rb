@@ -26,3 +26,8 @@ put '/users/profile' do
   @editprofile.update_attributes(username: params[:username], password_hash: params[:password_hash], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
   redirect '/users/profile'
 end
+
+post '/users/:username' do
+  current_user.followings << User.find_by(username: params[:username])
+  redirect "/users/#{current_user.username}"
+end
