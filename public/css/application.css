@@ -1,10 +1,39 @@
 /*CSS goes here*/
 .header {
   text-align: center;
+
+}
+
+header {
+  width:100%;
+  min-width: 960px;
+  height: 50px;
+  background-color:#88C9F9;
+  box-shadow:0 0px 2px #3B88C3;
+  vertical-align: middle;
+}
+
+button {
+  width: 120px;
+  height:50px;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  background-color: #88C9F9;
+  border-bottom:2px solid #3B88C3;
+}
+
+header button {
+  margin: 12px;
+  height: 30px;
+  font-size: 12px;
+  float:right;
+  background-color: gray;
+  border-bottom:2px solid gray;
 }
 
 body {
-  background-color: #00CED1;
+  background-color: #fcfcfc;
   width: 100%;
 }
 
@@ -20,3 +49,77 @@ body {
   width:50%;
   margin: 0 auto;
 }
+
+main {
+  padding: 100px;
+}
+
+
+.right {
+  width:50%;
+  float:right;
+}
+
+.left {
+  width:40%;
+  float:left;
+}
+
+table, th, td {
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
