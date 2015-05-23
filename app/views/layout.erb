@@ -11,7 +11,8 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
@@ -19,9 +20,11 @@
 </head>
 <body>
   <header>
+    <span class="logo">Keitter</span>
     <a href="/userlist"><button type="button">userlist</button></a>
     <%if current_user%>
      <a href="/signout"><button type="button">Banzai!!</button></a>
+     <a href="/users/profile"><button type="button">Profile</button></a>
    <%end%>
   </header>
 
