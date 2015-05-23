@@ -7,6 +7,7 @@ end
 get '/users/:username' do
   @user = User.find_by(username: params[:username])
   @keit = Keit.where(user_id: @user.id)
+  @followings = current_user.followings
   erb :'/users/index'
 end
 

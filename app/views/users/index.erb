@@ -38,3 +38,16 @@
 <% end %>
 
 <button><a href="/users/profile/relationships">See your relationships</a></button>
+
+<br>
+<h2>Newsfeed!</h2>
+<% @followings.each do |following| %>
+  <%= following.username %>:
+  <br>
+  <br>
+  <% following.keits.each do |keit| %>
+    <%= keit.text %>
+    <br>
+  <% end %>
+  <br>
+<% end %>
