@@ -7,14 +7,14 @@
 header {
   width:100%;
   min-width: 960px;
-  height: 50px;
+  height: 60px;
   background-color:#88C9F9;
   box-shadow:0 0px 2px #3B88C3;
   vertical-align: middle;
 }
 
 button {
-  width: 120px;
+  padding:15px 30px 15px 30px;
   height:50px;
   border:none;
   border-radius: 5px;
@@ -23,17 +23,35 @@ button {
   border-bottom:2px solid #3B88C3;
 }
 
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+}
+
 header button {
   margin: 12px;
-  height: 30px;
-  font-size: 12px;
+  padding:0px 20px 0px 20px;
+  height: 40px;
+  font-size: 14px;
   float:right;
-  background-color: gray;
+  background-color: #919191;
   border-bottom:2px solid gray;
 }
 
 body {
   background-color: #fcfcfc;
+  font-family: 'Arimo', sans-serif;
   width: 100%;
 }
 
@@ -69,8 +87,32 @@ table, th, td {
     padding: 10px;
 }
 
+form div {
+  margin: 10px;
+}
 
+input[type="text"] {
+  width:250px;
+  padding:5px;
+}
 
+input[type="submit"] {
+  padding:5px 20px 5px 20px;
+  height:50px;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  background-color: #88C9F9;
+  border-bottom:2px solid #3B88C3;
+}
+
+.logo {
+  padding: 10px 0px 10px 24px;
+  color: white;
+  font-size:28px;
+  font-family: 'Lobster', cursive;
+  float: left;
+}
 
 
 

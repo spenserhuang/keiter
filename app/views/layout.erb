@@ -11,7 +11,8 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
@@ -19,16 +20,18 @@
 </head>
 <body>
   <header>
+    <span class="logo">Keitter慧</span>
     <a href="/userlist"><button type="button">userlist</button></a>
     <%if current_user%>
      <a href="/signout"><button type="button">Banzai!!</button></a>
+     <a href="/users/<%=current_user.username%>"><button type="button">Profile</button></a>
    <%end%>
   </header>
 
   <main>
   <div class="left">
-  <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c134.0.533.533/295160_10150780302345815_1642421001_n.jpg?oh=ca715af5985d3ee498f035eabbcc9da0&oe=55CD2A18&__gda__=1442908498_ce0a2f098b86eac03af10b2aeea82846" alt="OUR GOD" title="BOW DOWN PLEBIAN"/ width="110%">
-  <p>BOW DOWN TO THE GOD, KEI, MOTHERFUCKERS!!!</p>
+    <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c134.0.533.533/295160_10150780302345815_1642421001_n.jpg?oh=ca715af5985d3ee498f035eabbcc9da0&oe=55CD2A18&__gda__=1442908498_ce0a2f098b86eac03af10b2aeea82846" alt="OUR GOD" title="BOW DOWN PLEBIAN"/ width="100%">
+    <h1>BOW DOWN TO THE GOD, 慧, MOTHERFUCKERS!!!</h1>
  </div>
  <div class="right">
   <%= yield %>

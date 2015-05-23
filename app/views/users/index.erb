@@ -1,6 +1,13 @@
 <h3><%=@user.username%> World</h3>
 <h4><%=@user.first_name%> <%=@user.last_name%></h4>
 
+<% if session[:user_id] != nil && session[:user_id] != @user.id  && current_user.followings.include?(User.find_by(username: params[:username])) == true %>
+
+ <h4><%=@user.email%></h4>
+ <h4><%=@user.phone_number%></h4>
+
+<% end %>
+
 <ul>
   <% if @keit != nil %>
     <% @keit.each do |keit| %>
@@ -18,11 +25,11 @@
     <div><input type="submit"></div>
   </form>
 
-  <div><a href="/users/profile">Wanna check/update your Keit profil</a></div>
+  <div><a href="/users/profile">Wanna check/update your Keit profile</a></div>
 
 <% end %>
 
-<% if session[:user_id] != nil && session[:user_id] != @user.id %>
+<% if session[:user_id] != nil && session[:user_id] != @user.id  && current_user.followings.include?(User.find_by(username: params[:username])) == false %>
 
   <form action="/users/<%=@user.username%>" method="post">
     <div><input type="submit" value="Keit Me"></div>
