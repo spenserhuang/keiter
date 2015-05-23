@@ -45,7 +45,7 @@ header button {
   height: 40px;
   font-size: 14px;
   float:right;
-  background-color: #919191;
+  background-color: #f2b087;
   border-bottom:2px solid gray;
 }
 
@@ -112,6 +112,15 @@ input[type="submit"] {
   font-size:28px;
   font-family: 'Lobster', cursive;
   float: left;
+}
+
+.sign_up button{
+  background-color: #f2b087;
+  border-bottom:2px solid gray;
+}
+
+#form_layout {
+  text-align:center;
 }
 
 
