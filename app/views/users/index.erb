@@ -1,4 +1,4 @@
-<h1><%=@user.username%> World</h1>
+<h1><%=@user.username%> World</h1   >
 <h3><%=@user.first_name%> <%=@user.last_name%></h3>
 
 <% if session[:user_id] != nil && session[:user_id] != @user.id  && current_user.followings.include?(User.find_by(username: params[:username])) == true %>
