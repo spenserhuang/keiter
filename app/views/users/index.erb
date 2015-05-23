@@ -1,12 +1,14 @@
 <h3><%=@user.username%> World</h3>
 <h4><%=@user.first_name%> <%=@user.last_name%></h4>
 
+
 <% if session[:user_id] != nil && session[:user_id] != @user.id  && current_user.followings.include?(User.find_by(username: params[:username])) == true %>
 
  <h4><%=@user.email%></h4>
  <h4><%=@user.phone_number%></h4>
 
 <% end %>
+
 
 <ul>
   <% if @keit != nil %>
@@ -17,6 +19,7 @@
     <p> Post a keit you fucker </p>
   <% end %>
 </ul>
+
 
 <% if session[:user_id] != nil && session[:user_id] == @user.id %>
 
@@ -29,6 +32,7 @@
 
 <% end %>
 
+
 <% if session[:user_id] != nil && session[:user_id] != @user.id  && current_user.followings.include?(User.find_by(username: params[:username])) == false %>
 
   <form action="/users/<%=@user.username%>" method="post">
@@ -36,6 +40,7 @@
   </form>
 
 <% end %>
+
 
 <button><a href="/users/profile/relationships">See your relationships</a></button>
 
